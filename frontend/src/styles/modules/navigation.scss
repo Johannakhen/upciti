@@ -1,0 +1,25 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  li {
+    button {
+      position: relative;
+      display: block;
+      padding: .5rem .80rem;
+      margin: 0 3px;
+      line-height: 1.25;
+      color: $black;
+      border: transparent;
+      background-color: transparent;
+      cursor: pointer;
+      &.active {
+        pointer-events: none;
+        color: $purple;
+        outline: none;
+        border: 1px solid $purple;
+        border-radius: 100%;
+      }
+    }
+  }
+}

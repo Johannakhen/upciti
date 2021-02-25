@@ -1,0 +1,112 @@
+.options {
+  display: flex;
+  margin-bottom: 20px;
+  @media screen and (max-width: $md-device) {
+    flex-direction: column;
+  }
+  .group {
+    position: relative;
+    &-select {
+      label {
+        position: absolute;
+        top: -20px;
+        font-size: 0.8rem;
+        font-weight: normal;
+        pointer-events: none;
+        @media screen and (max-width: $md-device) {
+          top: 0;
+        }
+
+      }
+    @media screen and (max-width: $md-device) {
+      margin-top: 20px;
+    }
+
+    }
+  }
+  input, select {
+    display: block;
+    width: 300px;
+    height: 42px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid $gray;
+    padding: 10px 10px 10px 5px;
+    margin-right: 10px;
+    background: transparent;
+    &:focus {
+      outline: none;
+    }
+    @media screen and (max-width: $md-device) {
+      width: 100%;
+    }
+  }
+  select {
+    @media screen and (max-width: $md-device) {
+      padding: 10px 10px 0px 0px;
+    }
+  }
+  input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 0.8rem;
+  }
+  label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    color: $gray;
+    font-size: 1rem;
+    font-weight :normal;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+  .bar {
+    position: relative;
+    display: block;
+    width: 300px;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      height: 2px;
+      width: 0;
+      background: $maincolor;
+      transition: 0.2s ease all;
+    }
+    &:before {
+      left: 50%;
+    }
+    &:after {
+      right: 50%;
+    }
+  }
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+  }
+  .highlight {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    height: 60%;
+    width: 100px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  input:focus ~ .highlight {
+    animation:inputHighlighter 0.3s ease;
+  }
+}
+
+/* ANIMATIONS */
+@-webkit-keyframes inputHighlighter {
+  from { background:$maincolor; }
+  to { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:$maincolor; }
+  to { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:$maincolor; }
+  to { width:0; background:transparent; }
+}

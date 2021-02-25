@@ -1,0 +1,87 @@
+$content-width: 1200px;
+$padding-width: 0 50px;
+$padding-width-bigger: 0 20px;
+$padding-width-smaller: 0 100px;
+//Text
+$base__font-size: 16px;
+$base__line: 24px;
+
+
+$font-family-sans-fallback: 'Helvetica', sans-serif;
+$font-family-sans: 'Helvetica', $font-family-sans-fallback;
+$font-family-serif: 'Playfair Display', 'Times New Roman', 'Times', serif;
+$font-family-title: 'Akira', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
+$font-family--primary : $font-family-sans;
+$font-family--secondary : $font-family-sans;
+
+//Colors
+$white: #fff;
+$black: #000;
+$bg-color: #f5eafb;
+$maincolor: #d8e2dc;
+$gray: #979797;
+$light-gray: #D8D8D8;
+$beige: #fff;
+$red: #e97878;
+$purple: #745586;
+$green: #75cfb8;
+$yellow: #f4d160;
+
+//Message Colors
+$error: lighten($red,5%) !default;
+$success: $green !default;
+$edit: $yellow !default;
+
+//Breakpoints
+$sm-device: 576px;
+$md-device: 768px;
+$lg-device: 992px;
+$xl-device: 1400px;
+
+//UI Colors
+$ui-colors: (
+  default: $purple,
+  success: $success,
+  error: $error,
+  warning: $edit
+);
+
+//Color Palette
+$palettes: (
+  gray-shades: (
+    base: $gray,
+    dark: darken($gray,20%),
+    light: lighten($gray,20%)
+  ),
+  blue-shades: (
+    base: $purple,
+    dark: darken($purple,20%),
+    light: lighten($purple,20%)
+  )
+);
+
+
+//Font size variables
+$default-font-size: $base__font-size - 2px;
+$small-font-size: $default-font-size - 2px;
+$lg-font-size: $default-font-size + 2px;
+
+//Heading font size vairables
+$heading-line-height: 28px !default;
+$head1-font-size: 26px !default;
+$head2-font-size: $head1-font-size - 4px !default;
+$head3-font-size: $head1-font-size - 8px !default;
+
+//Color Usage
+$primary-color: $white;
+$secondary-color: $black;
+$accent-color: $gray;
+$shadow-color: rgba($black, .2);
+$border-color: $gray;
+$color-text: #1e212d;
+$color-link: $purple;
+
+// Marquee
+$move-initial: calc(-25% + 20vw);
+$move-initial-slow: calc(-25% + 30vw);
+$move-final: calc(-50% + 20vw);

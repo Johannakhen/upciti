@@ -1,0 +1,39 @@
+version: "2.1"
+
+services:
+  backend:
+    image: quizz-back
+    build:
+      context: backend
+    restart: always
+    environment:
+      DEBUG: 1
+    ports:
+      - 8010:8000
+    volumes:
+      - ./backend/src:/app/backend
+    networks:
+      - backend
+      - frontend
+
+  frontend:
+    tty: true
+    build:
+      context: ./frontend
+      args:
+        NODE_ENV: "development"
+    volumes:
+      - ./frontend:/src/app
+      - ./frontend:/src/app/nodes_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - frontend
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - CI=true
+
+networks:
+  backend:
+  frontend:

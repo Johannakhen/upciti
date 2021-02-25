@@ -1,0 +1,41 @@
+.sidebar {
+  box-sizing: border-box;
+  position: fixed;
+  height: 100vh;
+  width: 240px;
+  background-color: $white;
+  box-shadow: 10px 0px 4px -13px rgba(0,0,0,1);
+  @media screen and (max-width: $md-device) {
+    display: none;
+  }
+  .logo {
+    max-width: 100px;
+    margin: 0 auto;
+  }
+}
+.menu {
+  margin-top: 50px;
+  &__list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 22px;
+    margin-bottom: 25px;
+    padding: 20px 50px;
+    color: $gray;
+    span {
+      position: absolute;
+      right: 15px;
+      font-size: 0.6rem;
+      color: $white;
+      background-color: $green;
+      padding: 3px;
+      border-radius: 3px;
+    }
+    &.active {
+      color: $purple;
+      background-color: $bg-color;
+      font-weight: bold;
+    }
+  }
+}
